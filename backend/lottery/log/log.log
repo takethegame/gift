@@ -1,0 +1,67 @@
+2024-03-12T09:17:21.936925+08:00 - long inited!
+2024-03-12T09:17:21.940837+08:00 - 🔧 Configured for [4mdebug[0m.
+2024-03-12T09:17:21.940881+08:00 - address: [1;39m127.0.0.1[0m
+2024-03-12T09:17:21.940908+08:00 - port: [1;39m8000[0m
+2024-03-12T09:17:21.940930+08:00 - workers: [1;39m12[0m
+2024-03-12T09:17:21.940951+08:00 - max blocking threads: [1;39m512[0m
+2024-03-12T09:17:21.940976+08:00 - ident: [1;39mRocket[0m
+2024-03-12T09:17:21.941+08:00 - IP header: [1;39mX-Real-IP[0m
+2024-03-12T09:17:21.941029+08:00 - limits: [1;39mbytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB[0m
+2024-03-12T09:17:21.941054+08:00 - temp dir: [1;39m/var/folders/5c/lr97g91j4319_f1vsg410ylw0000gn/T/[0m
+2024-03-12T09:17:21.941078+08:00 - http/2: [1;39mtrue[0m
+2024-03-12T09:17:21.941100+08:00 - keep-alive: [1;39m5[0m[1;39ms[0m
+2024-03-12T09:17:21.941122+08:00 - tls: [1;39mdisabled[0m
+2024-03-12T09:17:21.941722+08:00 - shutdown: [1;39mctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s[0m
+2024-03-12T09:17:21.941809+08:00 - log level: [1;39mnormal[0m
+2024-03-12T09:17:21.941835+08:00 - cli colors: [1;39mtrue[0m
+2024-03-12T09:17:21.941981+08:00 - 📬 [35mRoutes[0m:
+2024-03-12T09:17:21.942073+08:00 - [36m([0m[39mindex[0m[36m)[0m [32mGET[0m [34m/hi[0m
+2024-03-12T09:17:21.942109+08:00 - [36m([0m[39mput_item_to_redis[0m[36m)[0m [32mPOST[0m [34m/items[0m [33mapplication/json[0m
+2024-03-12T09:17:21.942140+08:00 - [36m([0m[39mtoken[0m[36m)[0m [32mGET[0m [34m/getToken[0m
+2024-03-12T09:17:21.942170+08:00 - [36m([0m[39mdelay[0m[36m)[0m [32mGET[0m [34m/delay/<seconds>[0m
+2024-03-12T09:17:21.942216+08:00 - 📡 [35mFairings[0m:
+2024-03-12T09:17:21.942247+08:00 - [1;39mShield[0m ([1;34mliftoff, response, singleton[0m)
+2024-03-12T09:17:21.942507+08:00 - 🛡️ [35mShield[0m:
+2024-03-12T09:17:21.942540+08:00 - Permissions-Policy: [39minterest-cohort=()[0m
+2024-03-12T09:17:21.943158+08:00 - X-Content-Type-Options: [39mnosniff[0m
+2024-03-12T09:17:21.943205+08:00 - X-Frame-Options: [39mSAMEORIGIN[0m
+2024-03-12T09:17:21.943250+08:00 - 🚀 [1;39mRocket has launched from [4mhttp://127.0.0.1:8000[0m
+2024-03-12T09:17:42.988865+08:00 - Received SIGINT. Requesting shutdown.
+2024-03-12T09:17:42.988996+08:00 - Shutdown requested. Waiting for pending I/O...
+2024-03-12T09:17:42.989114+08:00 - Graceful shutdown completed successfully.
+2024-03-12T09:22:41.078979+08:00 - long inited!
+2024-03-12T09:22:41.082799+08:00 - 🔧 Configured for [4mdebug[0m.
+2024-03-12T09:22:41.082854+08:00 - address: [1;39m127.0.0.1[0m
+2024-03-12T09:22:41.082889+08:00 - port: [1;39m8000[0m
+2024-03-12T09:22:41.082919+08:00 - workers: [1;39m12[0m
+2024-03-12T09:22:41.082950+08:00 - max blocking threads: [1;39m512[0m
+2024-03-12T09:22:41.082983+08:00 - ident: [1;39mRocket[0m
+2024-03-12T09:22:41.083016+08:00 - IP header: [1;39mX-Real-IP[0m
+2024-03-12T09:22:41.083053+08:00 - limits: [1;39mbytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB[0m
+2024-03-12T09:22:41.083086+08:00 - temp dir: [1;39m/var/folders/5c/lr97g91j4319_f1vsg410ylw0000gn/T/[0m
+2024-03-12T09:22:41.083117+08:00 - http/2: [1;39mtrue[0m
+2024-03-12T09:22:41.083148+08:00 - keep-alive: [1;39m5[0m[1;39ms[0m
+2024-03-12T09:22:41.083177+08:00 - tls: [1;39mdisabled[0m
+2024-03-12T09:22:41.083206+08:00 - shutdown: [1;39mctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s[0m
+2024-03-12T09:22:41.083236+08:00 - log level: [1;39mnormal[0m
+2024-03-12T09:22:41.083263+08:00 - cli colors: [1;39mtrue[0m
+2024-03-12T09:22:41.083407+08:00 - 📬 [35mRoutes[0m:
+2024-03-12T09:22:41.083495+08:00 - [36m([0m[39mindex[0m[36m)[0m [32mGET[0m [34m/hi[0m
+2024-03-12T09:22:41.083545+08:00 - [36m([0m[39mput_item_to_redis[0m[36m)[0m [32mPOST[0m [34m/items[0m [33mapplication/json[0m
+2024-03-12T09:22:41.083585+08:00 - [36m([0m[39mtoken[0m[36m)[0m [32mGET[0m [34m/getToken[0m
+2024-03-12T09:22:41.083665+08:00 - [36m([0m[39mdelay[0m[36m)[0m [32mGET[0m [34m/delay/<seconds>[0m
+2024-03-12T09:22:41.083765+08:00 - 📡 [35mFairings[0m:
+2024-03-12T09:22:41.083801+08:00 - [1;39mShield[0m ([1;34mliftoff, response, singleton[0m)
+2024-03-12T09:22:41.084157+08:00 - 🛡️ [35mShield[0m:
+2024-03-12T09:22:41.084205+08:00 - X-Frame-Options: [39mSAMEORIGIN[0m
+2024-03-12T09:22:41.084233+08:00 - Permissions-Policy: [39minterest-cohort=()[0m
+2024-03-12T09:22:41.084268+08:00 - X-Content-Type-Options: [39mnosniff[0m
+2024-03-12T09:22:41.084359+08:00 - 🚀 [1;39mRocket has launched from [4mhttp://127.0.0.1:8000[0m
+2024-03-12T09:22:57.933917+08:00 - [32mGET[0m [34m/delay/3[0m [33mtext/html[0m:
+2024-03-12T09:22:57.960061+08:00 - Matched: [36m([0m[39mdelay[0m[36m)[0m [32mGET[0m [34m/delay/<seconds>[0m
+2024-03-12T09:22:59.722491+08:00 - [32mGET[0m [34m/delay/3[0m [33mtext/html[0m:
+2024-03-12T09:22:59.742059+08:00 - Matched: [36m([0m[39mdelay[0m[36m)[0m [32mGET[0m [34m/delay/<seconds>[0m
+2024-03-12T09:23:00.960991+08:00 - [1;39mOutcome: [0m[32mSuccess[0m([39m200 OK[0m)
+2024-03-12T09:23:00.961260+08:00 - Remote left: client disconnect before response started.
+2024-03-12T09:23:02.742716+08:00 - [1;39mOutcome: [0m[32mSuccess[0m([39m200 OK[0m)
+2024-03-12T09:23:02.742922+08:00 - [32mResponse succeeded.[0m
