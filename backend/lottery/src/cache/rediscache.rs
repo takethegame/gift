@@ -1,9 +1,9 @@
-use std::{borrow::Borrow, error::Error, ptr::null};
+// use std::{borrow::Borrow, error::Error, ptr::null};
 
-use redis::{Client, Value};
-use r2d2_redis::redis::{Commands, FromRedisValue, RedisError, RedisResult};
+use redis::{Client};
+use r2d2_redis::redis::{Commands, RedisError};
 
-use log4rs;
+// use log4rs;
 use log::error;
 
 
@@ -35,7 +35,7 @@ pub use self::REDIS_CACHE as CACHE; */
 
 use r2d2::Pool;
 use r2d2_redis::RedisConnectionManager;
-use rocket::http::ext::IntoCollection;
+// use rocket::http::ext::IntoCollection;
 
 pub struct RedisClient {
     pool: Pool<RedisConnectionManager>,
@@ -43,9 +43,6 @@ pub struct RedisClient {
  
 impl RedisClient {
 
-    pub fn demo_run() {
-        println!("demo running");
-    }
     pub fn new(url: &str) -> Self {
         let client = Client::open(url).expect("Failed to open Redis connection");
         
@@ -95,7 +92,3 @@ impl RedisClient {
     } 
 }
 
-pub fn demo_cache() {
-
-    println!("running");
-}
