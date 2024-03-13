@@ -1,4 +1,5 @@
 #[macro_use] extern crate rocket;
+mod cache;
 
 // use r2d2_redis::redis::Client;
 use rocket::tokio::time::{ sleep, Duration};
@@ -12,22 +13,45 @@ use log::info;
 use rocket::State;
 // use std::sync::Arc;
 // use std::sync::Mutex;
-
-
-mod cache;
-
 use cache::rediscache::RedisClient;
+use std::collections::HashMap;
+use std::hash::Hash;
+use serde_json;  
 
-
+const DEVICE_ID:&str = "deviceId";
 
 #[get("/hi")]
-fn index() -> &'static str {
+fn index() -> &'static str { 
     return "Hello world!";
 }
 
-#[get("/getToken")]
-fn token() -> &'static str {
-    "test"
+#[derive(Serialize)] 
+struct ResultWrap {
+    data: HashMap<String, String>,  
+    code: u32,
+    msg: String,
+}
+
+#[get("/getToken?<deviceId>")]
+fn token(deviceId: &str, redis: &State<RedisClient>) -> String {
+    let r = redis.set("devices", deviceId);
+    let mut data : HashMap<String, String> = HashMap::new();
+    data.insert(String::from("token"), deviceId.to_string());
+
+    let result_wrap = ResultWrap {data: data, code : 0, msg:String::from("success")};
+
+    
+    let json = serde_json::to_string(&result_wrap);
+    json.expect( "{\"code\":-1, \"msg\": \"json translated failed\"}")
+    // match json {
+    //     Ok(value) => {
+    //         value
+    //     }
+    //     Err (e) => {
+    //         "{\"code\":-1, \"msg\": \"json translated failed\"}".to_string()
+    //     }
+    // }
+
 }
 
 #[derive(Serialize, Deserialize)]
