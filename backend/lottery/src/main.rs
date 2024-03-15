@@ -6,7 +6,7 @@ use rocket::tokio::time::{ sleep, Duration};
 // use redis::{Commands};
 use rocket_dyn_templates::serde::{Serialize, Deserialize};
 use rocket::serde::json::Json;
-use rocket::http::Status;
+use rocket::http::{Cookie, Status, CookieJar};
 // use redis::RedisResult;
 use log4rs;
 use log::info;
@@ -17,8 +17,14 @@ use cache::rediscache::RedisClient;
 use std::collections::HashMap;
 use std::hash::Hash;
 use serde_json;  
+extern crate chrono;
+use chrono::prelude::*;
+//use rocket::http::hyper::Request;
+
 
 const DEVICE_ID:&str = "deviceId";
+
+const DATE_FORMATE:&str = "%Y-%m-%d %H:%M;%S";
 
 #[get("/hi")]
 fn index() -> &'static str { 
@@ -26,23 +32,79 @@ fn index() -> &'static str {
 }
 
 #[derive(Serialize)] 
-struct ResultWrap {
-    data: HashMap<String, String>,  
-    code: u32,
-    msg: String,
+struct ResultWrap<'a, T> 
+where T : Serialize
+{
+    data: T,  
+    code: i32,
+    msg: &'a str,
+}
+
+#[derive(Serialize)]
+struct Problem<'a> {
+    stem: &'a str,
+    option: Vec<&'a str>,
+}
+
+#[get("/getProblemList?<token>")]
+fn get_problem_list(token:&str, redis: &State<RedisClient>, jar: &CookieJar<'_>) -> String {
+
+
+    let device_id = jar.get("deviceId").map(|c| c.value());
+
+    let token = redis.get(token);
+    if token == None {
+        return failed();
+    }
+
+    let token_time_string = token.expect("2000-01-01 00:00:00");
+    
+    let token_time = NaiveDateTime::parse_from_str(token_time_string.as_str(), DATE_FORMATE).unwrap();
+    let offset = FixedOffset::east(8 * 3600);
+    let token_local_time = DateTime::<Local>::from_utc(token_time, offset);
+
+    let current_time = Local::now() - chrono::Duration::days(1);
+    
+    if current_time > token_local_time {
+        return with_result("已抽奖", 0, "success");
+    }
+
+
+    "".to_string()
+}
+
+fn with_result<T>(data : T, code: i32, msg: &str) -> String
+where T : Serialize,
+{
+    let result_wrap = ResultWrap {data: data, code: code, msg: msg};
+    let json = serde_json::to_string(&result_wrap);
+    json.expect("{\"code\":-1, \"msg\": \"json translated failed\"}")
+}
+
+fn failed() -> String {
+    let result_wrap = ResultWrap {data: "failed", code: -1, msg:"failed"};
+    let json = serde_json::to_string(&result_wrap);
+    json.expect("{\"code\":-1, \"msg\": \"json translated failed\"}")
 }
 
 #[get("/getToken?<deviceId>")]
 fn token(deviceId: &str, redis: &State<RedisClient>) -> String {
-    let r = redis.set("devices", deviceId);
+
+    let current_time = Local::now();
+    let formated_time = current_time.format(DATE_FORMATE);
+    
+
+    //deviceId 塞入
+    let r = redis.set(deviceId, formated_time.to_string().as_str());
+
+    //组装返回结果
     let mut data : HashMap<String, String> = HashMap::new();
     data.insert(String::from("token"), deviceId.to_string());
 
-    let result_wrap = ResultWrap {data: data, code : 0, msg:String::from("success")};
+    with_result(data, 0, "success")
 
     
-    let json = serde_json::to_string(&result_wrap);
-    json.expect( "{\"code\":-1, \"msg\": \"json translated failed\"}")
+ 
     // match json {
     //     Ok(value) => {
     //         value
@@ -56,15 +118,15 @@ fn token(deviceId: &str, redis: &State<RedisClient>) -> String {
 
 #[derive(Serialize, Deserialize)]
 struct Item {
-    id: i32,
-    name:String,
+    deviceId: String,
+    prize:String,
 }
 
 #[post("/items", format = "json", data = "<item>")]
 fn put_item_to_redis(item: Json<Item>, redis: &State<RedisClient>) -> Result<Status, String>{
     let item_inner:Item = item.into_inner();
-    let item_name = item_inner.name;
-    let item_id = item_inner.id;
+    let item_name = item_inner.deviceId;
+    let prize = item_inner.prize;
     // let redis_cache = rocket::State::get().clone();
     // let mut redis_cache = redis_cache.lock().unwrap();
 
