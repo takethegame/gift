@@ -27,7 +27,7 @@ pub async fn get_problem(conn: &DBConn, id: i64) -> QueryResult<Problem> {
     }).await
 }
 
-pub async fn delete_problem(conn: &DBConn, id: i64) -> QueryResult<Problem> {
+pub async fn delete_problem(conn: &DBConn, id: i64) -> QueryResult<usize> {
 
     use crate::schema::problem::dsl::*;
 
