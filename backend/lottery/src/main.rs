@@ -21,6 +21,15 @@ extern crate chrono;
 use chrono::prelude::*;
 //use rocket::http::hyper::Request;
 
+pub mod problem_lib;
+
+pub mod models;
+
+pub mod datasource;
+
+pub mod schema;
+// use crate::datasource::Dbconn 
+
 
 const DEVICE_ID:&str = "deviceId";
 
@@ -41,7 +50,7 @@ where T : Serialize
 }
 
 #[derive(Serialize)]
-struct Problem<'a> {
+struct ProblemV<'a> {
     stem: &'a str,
     option: Vec<&'a str>,
 }
@@ -51,6 +60,7 @@ fn get_problem_list(token:&str, redis: &State<RedisClient>, jar: &CookieJar<'_>)
 
 
     let device_id = jar.get("deviceId").map(|c| c.value());
+    assert_eq!(device_id, Some(token));
 
     let token = redis.get(token);
     if token == None {
