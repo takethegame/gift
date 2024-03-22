@@ -531,6 +531,7 @@ dependencies = [
  "iana-time-zone",
  "js-sys",
  "num-traits",
+ "serde",
  "wasm-bindgen",
  "windows-targets 0.52.4",
 ]
@@ -1842,6 +1843,7 @@ dependencies = [
  "rocket_dyn_templates",
  "rocket_sync_db_pools",
  "serde",
+ "serde_derive",
  "serde_json",
 ]
 
