@@ -1,6 +1,7 @@
 #[macro_use] extern crate rocket;
 mod cache;
 
+use models::Problem;
 // use r2d2_redis::redis::Client;
 use rocket::tokio::time::{ sleep, Duration};
 // use redis::{Commands};
@@ -19,6 +20,7 @@ use std::hash::Hash;
 use serde_json;  
 extern crate chrono;
 use chrono::prelude::*;
+use diesel::prelude::*;
 //use rocket::http::hyper::Request;
 
 pub mod problem_lib;
@@ -28,7 +30,7 @@ pub mod models;
 pub mod datasource;
 
 pub mod schema;
-// use crate::datasource::Dbconn 
+use crate::datasource::mysql_conn::DBConn;
 
 
 const DEVICE_ID:&str = "deviceId";
@@ -49,38 +51,46 @@ where T : Serialize
     msg: &'a str,
 }
 
+#[derive(Serialize, Deserialize, Clone)] 
+struct ResultData< T> 
+where T : Serialize
+{
+    data: Option<T>,  
+    code: i32,
+    msg: String,
+}
+
 #[derive(Serialize)]
-struct ProblemV<'a> {
-    stem: &'a str,
-    option: Vec<&'a str>,
+struct ProblemV {
+    stem: String,
+    option: Vec<String>,
+}
+
+#[get("/test")]
+fn test() -> Json<ResultData<String>> {
+    Json(ResultData{code: 0, msg: String::from("ok"), data: None})
 }
 
 #[get("/getProblemList?<token>")]
-fn get_problem_list(token:&str, redis: &State<RedisClient>, jar: &CookieJar<'_>) -> String {
+async fn get_problem_list(token:&str, redis: &State<RedisClient>, jar: &CookieJar<'_>, conn: DBConn) -> Json<ResultData<Vec<ProblemV>>> {
 
-
-    let device_id = jar.get("deviceId").map(|c| c.value());
-    assert_eq!(device_id, Some(token));
-
-    let token = redis.get(token);
-    if token == None {
-        return failed();
-    }
-
-    let token_time_string = token.expect("2000-01-01 00:00:00");
+    let problems = problem_lib::get_problem( &conn, 1);
     
-    let token_time = NaiveDateTime::parse_from_str(token_time_string.as_str(), DATE_FORMATE).unwrap();
-    let offset = FixedOffset::east(8 * 3600);
-    let token_local_time = DateTime::<Local>::from_utc(token_time, offset);
-
-    let current_time = Local::now() - chrono::Duration::days(1);
-    
-    if current_time > token_local_time {
-        return with_result("已抽奖", 0, "success");
+    let ps : QueryResult<Problem> = problems.await;
+    match ps {
+        Ok(_p) => {
+            Json(ResultData{code: 0, msg: String::from("ok"), data: None})
+           /*  Json(ResultData{
+                    code : 0, 
+                    msg : String::from("ok"), 
+                    data : Some(vec!(ProblemV{stem: "aaa"}))
+                }
+                ) */
+        }
+        Err(_) => {
+            Json(ResultData{code: 1, msg:String::from("can not found data"), data:None})
+        }
     }
-
-
-    "".to_string()
 }
 
 fn with_result<T>(data : T, code: i32, msg: &str) -> String
@@ -195,8 +205,9 @@ fn rocket() -> _ {
    /*  let redis_client: Client = init_redis(); */
     rocket::build()
     .manage(RedisClient::new("redis://127.0.0.1/"))
+    .attach(DBConn::fairing())
     //.attach(LotteryContext::from)
-    .mount("/", routes![index, token, put_item_to_redis, delay])
+    .mount("/", routes![index, token,get_problem_list, put_item_to_redis, delay, test])
 }
 
 

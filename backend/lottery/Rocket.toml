@@ -1,0 +1,2 @@
+[global.databases]
+lottery = {url = "mysql://root:123456789@localhost/lottery"}

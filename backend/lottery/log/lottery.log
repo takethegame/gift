@@ -168,3 +168,146 @@
 2024-03-13T15:06:29.712967+08:00 WARN rocket::server - Received SIGINT. Requesting shutdown.
 2024-03-13T15:06:29.713101+08:00 INFO rocket::server - Shutdown requested. Waiting for pending I/O...
 2024-03-13T15:06:29.713204+08:00 INFO rocket::server - Graceful shutdown completed successfully.
+2024-03-22T15:37:14.921268+08:00 INFO lottery - long inited!
+2024-03-22T15:37:14.925904+08:00 ERROR rocket_sync_db_pools::connection - database config error for pool named `lottery`
+2024-03-22T15:37:14.925945+08:00 ERROR rocket_sync_db_pools::connection - missing field `url`
+2024-03-22T15:37:14.926545+08:00 ERROR rocket::error - Rocket failed to launch due to failing fairings:
+2024-03-22T15:37:14.926577+08:00 INFO rocket::error - 'lottery' Database Pool
+2024-03-22T15:37:52.863695+08:00 INFO lottery - long inited!
+2024-03-22T15:37:52.868569+08:00 ERROR rocket_sync_db_pools::connection - database config error for pool named `lottery`
+2024-03-22T15:37:52.868650+08:00 ERROR rocket_sync_db_pools::connection - missing field `url`
+2024-03-22T15:37:52.869283+08:00 ERROR rocket::error - Rocket failed to launch due to failing fairings:
+2024-03-22T15:37:52.869355+08:00 INFO rocket::error - 'lottery' Database Pool
+2024-03-22T15:38:11.715114+08:00 INFO lottery - long inited!
+2024-03-22T15:38:11.719735+08:00 ERROR rocket_sync_db_pools::connection - database config error for pool named `lottery`
+2024-03-22T15:38:11.719782+08:00 ERROR rocket_sync_db_pools::connection - missing field `url`
+2024-03-22T15:38:11.720316+08:00 ERROR rocket::error - Rocket failed to launch due to failing fairings:
+2024-03-22T15:38:11.720353+08:00 INFO rocket::error - 'lottery' Database Pool
+2024-03-22T15:41:44.419601+08:00 INFO lottery - long inited!
+2024-03-22T15:41:44.551065+08:00 INFO rocket::config::config - 🔧 Configured for [4mdebug[0m.
+2024-03-22T15:41:44.551119+08:00 INFO rocket::config::config - address: [1;39m127.0.0.1[0m
+2024-03-22T15:41:44.551150+08:00 INFO rocket::config::config - port: [1;39m8000[0m
+2024-03-22T15:41:44.551177+08:00 INFO rocket::config::config - workers: [1;39m12[0m
+2024-03-22T15:41:44.551202+08:00 INFO rocket::config::config - max blocking threads: [1;39m512[0m
+2024-03-22T15:41:44.551231+08:00 INFO rocket::config::config - ident: [1;39mRocket[0m
+2024-03-22T15:41:44.551258+08:00 INFO rocket::config::config - IP header: [1;39mX-Real-IP[0m
+2024-03-22T15:41:44.551291+08:00 INFO rocket::config::config - limits: [1;39mbytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB[0m
+2024-03-22T15:41:44.551323+08:00 INFO rocket::config::config - temp dir: [1;39m/var/folders/5c/lr97g91j4319_f1vsg410ylw0000gn/T/[0m
+2024-03-22T15:41:44.551348+08:00 INFO rocket::config::config - http/2: [1;39mtrue[0m
+2024-03-22T15:41:44.551373+08:00 INFO rocket::config::config - keep-alive: [1;39m5[0m[1;39ms[0m
+2024-03-22T15:41:44.551397+08:00 INFO rocket::config::config - tls: [1;39mdisabled[0m
+2024-03-22T15:41:44.551466+08:00 INFO rocket::config::config - shutdown: [1;39mctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s[0m
+2024-03-22T15:41:44.551492+08:00 INFO rocket::config::config - log level: [1;39mnormal[0m
+2024-03-22T15:41:44.551515+08:00 INFO rocket::config::config - cli colors: [1;39mtrue[0m
+2024-03-22T15:41:44.552805+08:00 INFO rocket::rocket - 📬 [35mRoutes[0m:
+2024-03-22T15:41:44.552893+08:00 INFO rocket::rocket - [36m([0m[39mindex[0m[36m)[0m [32mGET[0m [34m/hi[0m
+2024-03-22T15:41:44.552932+08:00 INFO rocket::rocket - [36m([0m[39mtest[0m[36m)[0m [32mGET[0m [34m/test[0m
+2024-03-22T15:41:44.552968+08:00 INFO rocket::rocket - [36m([0m[39mput_item_to_redis[0m[36m)[0m [32mPOST[0m [34m/items[0m [33mapplication/json[0m
+2024-03-22T15:41:44.553002+08:00 INFO rocket::rocket - [36m([0m[39mtoken[0m[36m)[0m [32mGET[0m [34m/getToken?<deviceId>[0m
+2024-03-22T15:41:44.553032+08:00 INFO rocket::rocket - [36m([0m[39mdelay[0m[36m)[0m [32mGET[0m [34m/delay/<seconds>[0m
+2024-03-22T15:41:44.553073+08:00 INFO rocket::fairing::fairings - 📡 [35mFairings[0m:
+2024-03-22T15:41:44.553107+08:00 INFO rocket::fairing::fairings - [1;39mShield[0m ([1;34mliftoff, response, singleton[0m)
+2024-03-22T15:41:44.553135+08:00 INFO rocket::fairing::fairings - [1;39m'lottery' Database Pool[0m ([1;34mignite[0m)
+2024-03-22T15:41:44.553316+08:00 INFO rocket::shield::shield - 🛡️ [35mShield[0m:
+2024-03-22T15:41:44.553343+08:00 INFO rocket::shield::shield - X-Frame-Options: [39mSAMEORIGIN[0m
+2024-03-22T15:41:44.555490+08:00 INFO rocket::shield::shield - Permissions-Policy: [39minterest-cohort=()[0m
+2024-03-22T15:41:44.555538+08:00 INFO rocket::shield::shield - X-Content-Type-Options: [39mnosniff[0m
+2024-03-22T15:41:44.555586+08:00 WARN rocket::rocket - 🚀 [1;39mRocket has launched from [4mhttp://127.0.0.1:8000[0m
+2024-03-22T15:43:17.611185+08:00 INFO rocket::server - [32mGET[0m [34m/[0m [33mtext/html[0m:
+2024-03-22T15:43:17.611720+08:00 ERROR rocket::server - No matching routes for [32mGET[0m [34m/[0m [33mtext/html[0m.
+2024-03-22T15:43:17.611845+08:00 WARN rocket::server - No [1;34m404[0m catcher registered. Using Rocket default.
+2024-03-22T15:43:17.612128+08:00 INFO rocket::server - [32mResponse succeeded.[0m
+2024-03-22T15:43:22.970684+08:00 INFO rocket::server - [32mGET[0m [34m/test[0m [33mtext/html[0m:
+2024-03-22T15:43:22.970772+08:00 INFO rocket::server - Matched: [36m([0m[39mtest[0m[36m)[0m [32mGET[0m [34m/test[0m
+2024-03-22T15:43:22.970860+08:00 INFO rocket::server - [1;39mOutcome: [0m[32mSuccess[0m([39m200 OK[0m)
+2024-03-22T15:43:22.970977+08:00 INFO rocket::server - [32mResponse succeeded.[0m
+2024-03-22T15:43:30.943587+08:00 WARN rocket::server - Received SIGINT. Requesting shutdown.
+2024-03-22T15:43:30.943718+08:00 INFO rocket::server - Shutdown requested. Waiting for pending I/O...
+2024-03-22T15:43:32.945572+08:00 INFO rocket::server - Graceful shutdown completed successfully.
+2024-03-22T16:09:01.034773+08:00 INFO lottery - long inited!
+2024-03-22T16:09:01.127487+08:00 INFO rocket::config::config - 🔧 Configured for [4mdebug[0m.
+2024-03-22T16:09:01.127559+08:00 INFO rocket::config::config - address: [1;39m127.0.0.1[0m
+2024-03-22T16:09:01.127598+08:00 INFO rocket::config::config - port: [1;39m8000[0m
+2024-03-22T16:09:01.127630+08:00 INFO rocket::config::config - workers: [1;39m12[0m
+2024-03-22T16:09:01.127663+08:00 INFO rocket::config::config - max blocking threads: [1;39m512[0m
+2024-03-22T16:09:01.127698+08:00 INFO rocket::config::config - ident: [1;39mRocket[0m
+2024-03-22T16:09:01.127733+08:00 INFO rocket::config::config - IP header: [1;39mX-Real-IP[0m
+2024-03-22T16:09:01.127774+08:00 INFO rocket::config::config - limits: [1;39mbytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB[0m
+2024-03-22T16:09:01.127814+08:00 INFO rocket::config::config - temp dir: [1;39m/var/folders/5c/lr97g91j4319_f1vsg410ylw0000gn/T/[0m
+2024-03-22T16:09:01.127894+08:00 INFO rocket::config::config - http/2: [1;39mtrue[0m
+2024-03-22T16:09:01.127928+08:00 INFO rocket::config::config - keep-alive: [1;39m5[0m[1;39ms[0m
+2024-03-22T16:09:01.127961+08:00 INFO rocket::config::config - tls: [1;39mdisabled[0m
+2024-03-22T16:09:01.127996+08:00 INFO rocket::config::config - shutdown: [1;39mctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s[0m
+2024-03-22T16:09:01.128031+08:00 INFO rocket::config::config - log level: [1;39mnormal[0m
+2024-03-22T16:09:01.128063+08:00 INFO rocket::config::config - cli colors: [1;39mtrue[0m
+2024-03-22T16:09:01.128233+08:00 INFO rocket::rocket - 📬 [35mRoutes[0m:
+2024-03-22T16:09:01.128333+08:00 INFO rocket::rocket - [36m([0m[39mindex[0m[36m)[0m [32mGET[0m [34m/hi[0m
+2024-03-22T16:09:01.128378+08:00 INFO rocket::rocket - [36m([0m[39mtest[0m[36m)[0m [32mGET[0m [34m/test[0m
+2024-03-22T16:09:01.128426+08:00 INFO rocket::rocket - [36m([0m[39mput_item_to_redis[0m[36m)[0m [32mPOST[0m [34m/items[0m [33mapplication/json[0m
+2024-03-22T16:09:01.128472+08:00 INFO rocket::rocket - [36m([0m[39mtoken[0m[36m)[0m [32mGET[0m [34m/getToken?<deviceId>[0m
+2024-03-22T16:09:01.128514+08:00 INFO rocket::rocket - [36m([0m[39mdelay[0m[36m)[0m [32mGET[0m [34m/delay/<seconds>[0m
+2024-03-22T16:09:01.128567+08:00 INFO rocket::fairing::fairings - 📡 [35mFairings[0m:
+2024-03-22T16:09:01.128613+08:00 INFO rocket::fairing::fairings - [1;39mShield[0m ([1;34mliftoff, response, singleton[0m)
+2024-03-22T16:09:01.128651+08:00 INFO rocket::fairing::fairings - [1;39m'lottery' Database Pool[0m ([1;34mignite[0m)
+2024-03-22T16:09:01.128871+08:00 INFO rocket::shield::shield - 🛡️ [35mShield[0m:
+2024-03-22T16:09:01.128909+08:00 INFO rocket::shield::shield - Permissions-Policy: [39minterest-cohort=()[0m
+2024-03-22T16:09:01.128941+08:00 INFO rocket::shield::shield - X-Frame-Options: [39mSAMEORIGIN[0m
+2024-03-22T16:09:01.128971+08:00 INFO rocket::shield::shield - X-Content-Type-Options: [39mnosniff[0m
+2024-03-22T16:09:01.129026+08:00 WARN rocket::rocket - 🚀 [1;39mRocket has launched from [4mhttp://127.0.0.1:8000[0m
+2024-03-22T16:09:12.169761+08:00 INFO rocket::server - [32mGET[0m [34m/test[0m [33mtext/html[0m:
+2024-03-22T16:09:12.189137+08:00 INFO rocket::server - Matched: [36m([0m[39mtest[0m[36m)[0m [32mGET[0m [34m/test[0m
+2024-03-22T16:09:12.194207+08:00 INFO rocket::server - [1;39mOutcome: [0m[32mSuccess[0m([39m200 OK[0m)
+2024-03-22T16:09:12.194543+08:00 INFO rocket::server - [32mResponse succeeded.[0m
+2024-03-22T16:09:34.034769+08:00 INFO rocket::server - [32mGET[0m [34m/getProblemList?1111[0m [33mtext/html[0m:
+2024-03-22T16:09:34.035150+08:00 ERROR rocket::server - No matching routes for [32mGET[0m [34m/getProblemList?1111[0m [33mtext/html[0m.
+2024-03-22T16:09:34.035296+08:00 WARN rocket::server - No [1;34m404[0m catcher registered. Using Rocket default.
+2024-03-22T16:09:34.035471+08:00 INFO rocket::server - [32mResponse succeeded.[0m
+2024-03-22T16:10:00.250590+08:00 WARN rocket::server - Received SIGINT. Requesting shutdown.
+2024-03-22T16:10:00.251252+08:00 INFO rocket::server - Shutdown requested. Waiting for pending I/O...
+2024-03-22T16:10:02.249263+08:00 INFO rocket::server - Graceful shutdown completed successfully.
+2024-03-22T16:10:12.195387+08:00 INFO lottery - long inited!
+2024-03-22T16:10:12.270348+08:00 INFO rocket::config::config - 🔧 Configured for [4mdebug[0m.
+2024-03-22T16:10:12.270408+08:00 INFO rocket::config::config - address: [1;39m127.0.0.1[0m
+2024-03-22T16:10:12.270441+08:00 INFO rocket::config::config - port: [1;39m8000[0m
+2024-03-22T16:10:12.270476+08:00 INFO rocket::config::config - workers: [1;39m12[0m
+2024-03-22T16:10:12.270505+08:00 INFO rocket::config::config - max blocking threads: [1;39m512[0m
+2024-03-22T16:10:12.270535+08:00 INFO rocket::config::config - ident: [1;39mRocket[0m
+2024-03-22T16:10:12.270566+08:00 INFO rocket::config::config - IP header: [1;39mX-Real-IP[0m
+2024-03-22T16:10:12.270652+08:00 INFO rocket::config::config - limits: [1;39mbytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB[0m
+2024-03-22T16:10:12.270686+08:00 INFO rocket::config::config - temp dir: [1;39m/var/folders/5c/lr97g91j4319_f1vsg410ylw0000gn/T/[0m
+2024-03-22T16:10:12.270715+08:00 INFO rocket::config::config - http/2: [1;39mtrue[0m
+2024-03-22T16:10:12.270743+08:00 INFO rocket::config::config - keep-alive: [1;39m5[0m[1;39ms[0m
+2024-03-22T16:10:12.270770+08:00 INFO rocket::config::config - tls: [1;39mdisabled[0m
+2024-03-22T16:10:12.270802+08:00 INFO rocket::config::config - shutdown: [1;39mctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s[0m
+2024-03-22T16:10:12.270830+08:00 INFO rocket::config::config - log level: [1;39mnormal[0m
+2024-03-22T16:10:12.270871+08:00 INFO rocket::config::config - cli colors: [1;39mtrue[0m
+2024-03-22T16:10:12.271035+08:00 INFO rocket::rocket - 📬 [35mRoutes[0m:
+2024-03-22T16:10:12.271125+08:00 INFO rocket::rocket - [36m([0m[39mindex[0m[36m)[0m [32mGET[0m [34m/hi[0m
+2024-03-22T16:10:12.271163+08:00 INFO rocket::rocket - [36m([0m[39mtest[0m[36m)[0m [32mGET[0m [34m/test[0m
+2024-03-22T16:10:12.271201+08:00 INFO rocket::rocket - [36m([0m[39mput_item_to_redis[0m[36m)[0m [32mPOST[0m [34m/items[0m [33mapplication/json[0m
+2024-03-22T16:10:12.271238+08:00 INFO rocket::rocket - [36m([0m[39mtoken[0m[36m)[0m [32mGET[0m [34m/getToken?<deviceId>[0m
+2024-03-22T16:10:12.271272+08:00 INFO rocket::rocket - [36m([0m[39mget_problem_list[0m[36m)[0m [32mGET[0m [34m/getProblemList?<token>[0m
+2024-03-22T16:10:12.271305+08:00 INFO rocket::rocket - [36m([0m[39mdelay[0m[36m)[0m [32mGET[0m [34m/delay/<seconds>[0m
+2024-03-22T16:10:12.271353+08:00 INFO rocket::fairing::fairings - 📡 [35mFairings[0m:
+2024-03-22T16:10:12.271392+08:00 INFO rocket::fairing::fairings - [1;39mShield[0m ([1;34mliftoff, response, singleton[0m)
+2024-03-22T16:10:12.271423+08:00 INFO rocket::fairing::fairings - [1;39m'lottery' Database Pool[0m ([1;34mignite[0m)
+2024-03-22T16:10:12.271635+08:00 INFO rocket::shield::shield - 🛡️ [35mShield[0m:
+2024-03-22T16:10:12.271666+08:00 INFO rocket::shield::shield - X-Frame-Options: [39mSAMEORIGIN[0m
+2024-03-22T16:10:12.271691+08:00 INFO rocket::shield::shield - X-Content-Type-Options: [39mnosniff[0m
+2024-03-22T16:10:12.271716+08:00 INFO rocket::shield::shield - Permissions-Policy: [39minterest-cohort=()[0m
+2024-03-22T16:10:12.271764+08:00 WARN rocket::rocket - 🚀 [1;39mRocket has launched from [4mhttp://127.0.0.1:8000[0m
+2024-03-22T16:10:14.682212+08:00 INFO rocket::server - [32mGET[0m [34m/getProblemList?1111[0m [33mtext/html[0m:
+2024-03-22T16:10:14.682310+08:00 INFO rocket::server - Matched: [36m([0m[39mget_problem_list[0m[36m)[0m [32mGET[0m [34m/getProblemList?<token>[0m
+2024-03-22T16:10:14.697043+08:00 WARN lottery - Query string failed to match route declaration.
+2024-03-22T16:10:14.712820+08:00 WARN lottery - missing
+2024-03-22T16:10:14.712946+08:00 INFO rocket::server - [1;39mOutcome: [0m[33mForward[0m([39m422 Unprocessable Entity[0m)
+2024-03-22T16:10:14.713088+08:00 ERROR rocket::server - No matching routes for [32mGET[0m [34m/getProblemList?1111[0m [33mtext/html[0m.
+2024-03-22T16:10:14.713160+08:00 WARN rocket::server - No [1;34m422[0m catcher registered. Using Rocket default.
+2024-03-22T16:10:14.713369+08:00 INFO rocket::server - [32mResponse succeeded.[0m
+2024-03-22T16:10:41.646848+08:00 INFO rocket::server - [32mGET[0m [34m/getProblemList?token=1111[0m [33mtext/html[0m:
+2024-03-22T16:10:41.666399+08:00 INFO rocket::server - Matched: [36m([0m[39mget_problem_list[0m[36m)[0m [32mGET[0m [34m/getProblemList?<token>[0m
+2024-03-22T16:10:41.753906+08:00 INFO rocket::server - [1;39mOutcome: [0m[32mSuccess[0m([39m200 OK[0m)
+2024-03-22T16:10:41.754047+08:00 INFO rocket::server - [32mResponse succeeded.[0m
+2024-03-22T16:25:21.613054+08:00 WARN rocket::server - Received SIGINT. Requesting shutdown.
+2024-03-22T16:25:21.613652+08:00 INFO rocket::server - Shutdown requested. Waiting for pending I/O...
+2024-03-22T16:25:21.613766+08:00 INFO rocket::server - Graceful shutdown completed successfully.

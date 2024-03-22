@@ -2,9 +2,6 @@ use diesel::prelude::*;
 use crate::models::Problem;
 use crate::datasource::mysql_conn::DBConn;
 
-
-
-
 pub async fn create_problem(conn: &DBConn, problem: Problem) -> QueryResult<usize> {
 
     use crate::schema::problem::dsl::*;
@@ -24,6 +21,16 @@ pub async fn get_problem(conn: &DBConn, id: i64) -> QueryResult<Problem> {
 
     conn.run(move |c| {
         problem.find(id).first::<Problem>(c)
+    }).await
+}
+
+
+pub async fn get_all_problem(conn: &DBConn) -> QueryResult<Problem> {
+
+    use crate::schema::problem::dsl::*;
+
+    conn.run(move |c| {
+        problem.find(1).first::<Problem>(c)
     }).await
 }
 
