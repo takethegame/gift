@@ -1,4 +1,5 @@
-use diesel::prelude::*;
+
+use diesel::{prelude::*, sql_query};
 use crate::models::Problem;
 use crate::datasource::mysql_conn::DBConn;
 
@@ -25,12 +26,16 @@ pub async fn get_problem(conn: &DBConn, id: i64) -> QueryResult<Problem> {
 }
 
 
-pub async fn get_all_problem(conn: &DBConn) -> QueryResult<Problem> {
+pub async fn get_all_problem(conn: &DBConn) -> QueryResult<Vec<Problem>> {
 
     use crate::schema::problem::dsl::*;
-
+    // let r = sql_query("select * from problem").get_results(conn);
+    // let result = problem.limit(5).select(Problem::as_select()).load(conn);
+    // result
     conn.run(move |c| {
-        problem.find(1).first::<Problem>(c)
+        // problem.find().first::<Problem>(c)
+        problem.limit(5).select(Problem::as_select()).load(c)
+        
     }).await
 }
 
