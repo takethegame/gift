@@ -74,12 +74,44 @@ fn test() -> Json<ResultData<String>> {
 #[get("/getProblemList?<token>")]
 async fn get_problem_list(token:&str, redis: &State<RedisClient>, jar: &CookieJar<'_>, conn: DBConn) -> Json<ResultData<Vec<ProblemV>>> {
 
-    let problems = problem_lib::get_problem( &conn, 1);
+    // let problems = problem_lib::get_problem( &conn, 1);
+    let problems = problem_lib::get_all_problem(&conn);
     
-    let ps : QueryResult<Problem> = problems.await;
+    let ps : QueryResult<Vec<Problem>> = problems.await;
     match ps {
-        Ok(_p) => {
-            Json(ResultData{code: 0, msg: String::from("ok"), data: None})
+        Ok(v_p) => {
+            let mut pv = Vec::new();
+            for one_p in v_p.iter() {
+                let mut ops: Vec<String> = Vec::new();
+
+                if let Some(o_a) = &one_p.option_a {
+                    ops.push(o_a.clone());
+                }
+
+                if let Some(o_b) = &one_p.option_b {
+                    ops.push(o_b.clone());
+                }
+
+                if let Some(o_c) = &one_p.option_c {
+                    ops.push(o_c.clone());
+                }
+
+                if let Some(o_d) = &one_p.option_d {
+                    ops.push(o_d.clone());
+                }
+
+                if let Some(o_e) = &one_p.option_e {
+                    ops.push(o_e.clone());
+                }
+                
+                if let Some(o_f) = &one_p.option_f {
+                    ops.push(o_f.clone());
+                }
+
+                pv.push(ProblemV{stem : one_p.stem.clone(), option:ops})
+            }
+
+            Json(ResultData{code: 0, msg: String::from("ok"), data: Some(pv)})
            /*  Json(ResultData{
                     code : 0, 
                     msg : String::from("ok"), 

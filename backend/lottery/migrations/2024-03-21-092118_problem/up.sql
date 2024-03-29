@@ -17,4 +17,11 @@ CREATE TABLE `problem` (
   `update_by` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT '' not null COMMENT '更新者',
   `update_time` datetime NOT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC COMMENT='问题表'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC COMMENT='问题表';
+
+
+insert into problem (
+  id, stem, problem_type,option_a, option_b,option_c,option_d,option_e,option_f,answer,status, is_delete, create_by, create_time, update_by, update_time
+) values (
+  1, "ChatGPT由哪家公司开发的？", "S", "A:OpenAI", "B:Microsoft", "C:Google", "D:Facebook", null, null, "A", 0, "N", "system", now(), "system", now()
+)
