@@ -74,7 +74,6 @@ fn test() -> Json<ResultData<String>> {
 #[get("/getProblemList?<token>")]
 async fn get_problem_list(token:&str, redis: &State<RedisClient>, jar: &CookieJar<'_>, conn: DBConn) -> Json<ResultData<Vec<ProblemV>>> {
 
-    // let problems = problem_lib::get_problem( &conn, 1);
     let problems = problem_lib::get_all_problem(&conn);
     
     let ps : QueryResult<Vec<Problem>> = problems.await;
@@ -112,12 +111,6 @@ async fn get_problem_list(token:&str, redis: &State<RedisClient>, jar: &CookieJa
             }
 
             Json(ResultData{code: 0, msg: String::from("ok"), data: Some(pv)})
-           /*  Json(ResultData{
-                    code : 0, 
-                    msg : String::from("ok"), 
-                    data : Some(vec!(ProblemV{stem: "aaa"}))
-                }
-                ) */
         }
         Err(_) => {
             Json(ResultData{code: 1, msg:String::from("can not found data"), data:None})
@@ -125,22 +118,8 @@ async fn get_problem_list(token:&str, redis: &State<RedisClient>, jar: &CookieJa
     }
 }
 
-fn with_result<T>(data : T, code: i32, msg: &str) -> String
-where T : Serialize,
-{
-    let result_wrap = ResultWrap {data: data, code: code, msg: msg};
-    let json = serde_json::to_string(&result_wrap);
-    json.expect("{\"code\":-1, \"msg\": \"json translated failed\"}")
-}
-
-fn failed() -> String {
-    let result_wrap = ResultWrap {data: "failed", code: -1, msg:"failed"};
-    let json = serde_json::to_string(&result_wrap);
-    json.expect("{\"code\":-1, \"msg\": \"json translated failed\"}")
-}
-
 #[get("/getToken?<deviceId>")]
-fn token(deviceId: &str, redis: &State<RedisClient>) -> String {
+fn token(deviceId: &str, redis: &State<RedisClient>) -> Json<ResultData<String>> {
 
     let current_time = Local::now();
     let formated_time = current_time.format(DATE_FORMATE);
@@ -153,19 +132,7 @@ fn token(deviceId: &str, redis: &State<RedisClient>) -> String {
     let mut data : HashMap<String, String> = HashMap::new();
     data.insert(String::from("token"), deviceId.to_string());
 
-    with_result(data, 0, "success")
-
-    
- 
-    // match json {
-    //     Ok(value) => {
-    //         value
-    //     }
-    //     Err (e) => {
-    //         "{\"code\":-1, \"msg\": \"json translated failed\"}".to_string()
-    //     }
-    // }
-
+    Json(ResultData{code: 0, msg: String::from("ok"), data: Some(String::from("success"))})
 }
 
 #[derive(Serialize, Deserialize)]

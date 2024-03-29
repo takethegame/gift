@@ -34,7 +34,10 @@ pub async fn get_all_problem(conn: &DBConn) -> QueryResult<Vec<Problem>> {
     // result
     conn.run(move |c| {
         // problem.find().first::<Problem>(c)
-        problem.limit(5).select(Problem::as_select()).load(c)
+        problem.filter(status.eq(0))
+        .limit(5)
+        .select(Problem::as_select())
+        .load(c)
         
     }).await
 }

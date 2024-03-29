@@ -24,4 +24,22 @@ insert into problem (
   id, stem, problem_type,option_a, option_b,option_c,option_d,option_e,option_f,answer,status, is_delete, create_by, create_time, update_by, update_time
 ) values (
   1, "ChatGPT由哪家公司开发的？", "S", "A:OpenAI", "B:Microsoft", "C:Google", "D:Facebook", null, null, "A", 0, "N", "system", now(), "system", now()
-)
+);
+
+insert into problem (
+  id, stem, problem_type,option_a, option_b,option_c,option_d,option_e,option_f,answer,status, is_delete, create_by, create_time, update_by, update_time
+) values (
+  2, "OFFICE由哪家公司开发的？", "S", "A:OpenAI", "B:Microsoft", "C:Google", "D:Facebook", null, null, "A", 0, "N", "system", now(), "system", now()
+);
+
+insert into problem (
+  id, stem, problem_type,option_a, option_b,option_c,option_d,option_e,option_f,answer,status, is_delete, create_by, create_time, update_by, update_time
+) values (
+  3, "PageRank由哪家公司发明的的？", "S", "A:OpenAI", "B:Microsoft", "C:Google", "D:Facebook", null, null, "A", 0, "N", "system", now(), "system", now()
+);
+
+insert into problem (
+  id, stem, problem_type,option_a, option_b,option_c,option_d,option_e,option_f,answer,status, is_delete, create_by, create_time, update_by, update_time
+) values (
+  4, "PageRank由哪家公司发明的的？", "S", "A:OpenAI", "B:Microsoft", "C:Google", "D:Facebook", null, null, "A", 0, "Y", "system", now(), "system", now()
+);

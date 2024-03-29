@@ -399,3 +399,115 @@
 2024-03-29T15:19:24.452950+08:00 WARN rocket::server - Received SIGINT. Requesting shutdown.
 2024-03-29T15:19:24.453480+08:00 INFO rocket::server - Shutdown requested. Waiting for pending I/O...
 2024-03-29T15:19:26.454835+08:00 INFO rocket::server - Graceful shutdown completed successfully.
+2024-03-29T15:47:26.252871+08:00 INFO lottery - long inited!
+2024-03-29T15:47:26.325935+08:00 INFO rocket::config::config - 🔧 Configured for [4mdebug[0m.
+2024-03-29T15:47:26.325996+08:00 INFO rocket::config::config - address: [1;39m127.0.0.1[0m
+2024-03-29T15:47:26.326029+08:00 INFO rocket::config::config - port: [1;39m8000[0m
+2024-03-29T15:47:26.326057+08:00 INFO rocket::config::config - workers: [1;39m12[0m
+2024-03-29T15:47:26.326085+08:00 INFO rocket::config::config - max blocking threads: [1;39m512[0m
+2024-03-29T15:47:26.326116+08:00 INFO rocket::config::config - ident: [1;39mRocket[0m
+2024-03-29T15:47:26.326147+08:00 INFO rocket::config::config - IP header: [1;39mX-Real-IP[0m
+2024-03-29T15:47:26.326183+08:00 INFO rocket::config::config - limits: [1;39mbytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB[0m
+2024-03-29T15:47:26.326218+08:00 INFO rocket::config::config - temp dir: [1;39m/var/folders/5c/lr97g91j4319_f1vsg410ylw0000gn/T/[0m
+2024-03-29T15:47:26.326247+08:00 INFO rocket::config::config - http/2: [1;39mtrue[0m
+2024-03-29T15:47:26.326277+08:00 INFO rocket::config::config - keep-alive: [1;39m5[0m[1;39ms[0m
+2024-03-29T15:47:26.326305+08:00 INFO rocket::config::config - tls: [1;39mdisabled[0m
+2024-03-29T15:47:26.326334+08:00 INFO rocket::config::config - shutdown: [1;39mctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s[0m
+2024-03-29T15:47:26.326363+08:00 INFO rocket::config::config - log level: [1;39mnormal[0m
+2024-03-29T15:47:26.326389+08:00 INFO rocket::config::config - cli colors: [1;39mtrue[0m
+2024-03-29T15:47:26.326540+08:00 INFO rocket::rocket - 📬 [35mRoutes[0m:
+2024-03-29T15:47:26.326631+08:00 INFO rocket::rocket - [36m([0m[39mindex[0m[36m)[0m [32mGET[0m [34m/hi[0m
+2024-03-29T15:47:26.326670+08:00 INFO rocket::rocket - [36m([0m[39mtest[0m[36m)[0m [32mGET[0m [34m/test[0m
+2024-03-29T15:47:26.326711+08:00 INFO rocket::rocket - [36m([0m[39mput_item_to_redis[0m[36m)[0m [32mPOST[0m [34m/items[0m [33mapplication/json[0m
+2024-03-29T15:47:26.326851+08:00 INFO rocket::rocket - [36m([0m[39mtoken[0m[36m)[0m [32mGET[0m [34m/getToken?<deviceId>[0m
+2024-03-29T15:47:26.326892+08:00 INFO rocket::rocket - [36m([0m[39mget_problem_list[0m[36m)[0m [32mGET[0m [34m/getProblemList?<token>[0m
+2024-03-29T15:47:26.326961+08:00 INFO rocket::rocket - [36m([0m[39mdelay[0m[36m)[0m [32mGET[0m [34m/delay/<seconds>[0m
+2024-03-29T15:47:26.327009+08:00 INFO rocket::fairing::fairings - 📡 [35mFairings[0m:
+2024-03-29T15:47:26.327076+08:00 INFO rocket::fairing::fairings - [1;39m'lottery' Database Pool[0m ([1;34mignite[0m)
+2024-03-29T15:47:26.327115+08:00 INFO rocket::fairing::fairings - [1;39mShield[0m ([1;34mliftoff, response, singleton[0m)
+2024-03-29T15:47:26.327340+08:00 INFO rocket::shield::shield - 🛡️ [35mShield[0m:
+2024-03-29T15:47:26.327371+08:00 INFO rocket::shield::shield - Permissions-Policy: [39minterest-cohort=()[0m
+2024-03-29T15:47:26.327396+08:00 INFO rocket::shield::shield - X-Frame-Options: [39mSAMEORIGIN[0m
+2024-03-29T15:47:26.327420+08:00 INFO rocket::shield::shield - X-Content-Type-Options: [39mnosniff[0m
+2024-03-29T15:47:26.327462+08:00 WARN rocket::rocket - 🚀 [1;39mRocket has launched from [4mhttp://127.0.0.1:8000[0m
+2024-03-29T15:47:28.523208+08:00 INFO rocket::server - [32mGET[0m [34m/getProblemList?token=1111[0m [33mtext/html[0m:
+2024-03-29T15:47:28.523323+08:00 INFO rocket::server - Matched: [36m([0m[39mget_problem_list[0m[36m)[0m [32mGET[0m [34m/getProblemList?<token>[0m
+2024-03-29T15:47:28.530255+08:00 INFO rocket::server - [1;39mOutcome: [0m[32mSuccess[0m([39m200 OK[0m)
+2024-03-29T15:47:28.530550+08:00 INFO rocket::server - [32mResponse succeeded.[0m
+2024-03-29T15:47:32.087329+08:00 INFO rocket::server - [32mGET[0m [34m/getProblemList?token=1111[0m [33mtext/html[0m:
+2024-03-29T15:47:32.087426+08:00 INFO rocket::server - Matched: [36m([0m[39mget_problem_list[0m[36m)[0m [32mGET[0m [34m/getProblemList?<token>[0m
+2024-03-29T15:47:32.088378+08:00 INFO rocket::server - [1;39mOutcome: [0m[32mSuccess[0m([39m200 OK[0m)
+2024-03-29T15:47:32.088585+08:00 INFO rocket::server - [32mResponse succeeded.[0m
+2024-03-29T15:47:32.603973+08:00 INFO rocket::server - [32mGET[0m [34m/getProblemList?token=1111[0m [33mtext/html[0m:
+2024-03-29T15:47:32.604068+08:00 INFO rocket::server - Matched: [36m([0m[39mget_problem_list[0m[36m)[0m [32mGET[0m [34m/getProblemList?<token>[0m
+2024-03-29T15:47:32.604848+08:00 INFO rocket::server - [1;39mOutcome: [0m[32mSuccess[0m([39m200 OK[0m)
+2024-03-29T15:47:32.605032+08:00 INFO rocket::server - [32mResponse succeeded.[0m
+2024-03-29T15:47:32.920457+08:00 INFO rocket::server - [32mGET[0m [34m/getProblemList?token=1111[0m [33mtext/html[0m:
+2024-03-29T15:47:32.920549+08:00 INFO rocket::server - Matched: [36m([0m[39mget_problem_list[0m[36m)[0m [32mGET[0m [34m/getProblemList?<token>[0m
+2024-03-29T15:47:32.921314+08:00 INFO rocket::server - [1;39mOutcome: [0m[32mSuccess[0m([39m200 OK[0m)
+2024-03-29T15:47:32.921460+08:00 INFO rocket::server - [32mResponse succeeded.[0m
+2024-03-29T15:47:33.153695+08:00 INFO rocket::server - [32mGET[0m [34m/getProblemList?token=1111[0m [33mtext/html[0m:
+2024-03-29T15:47:33.153789+08:00 INFO rocket::server - Matched: [36m([0m[39mget_problem_list[0m[36m)[0m [32mGET[0m [34m/getProblemList?<token>[0m
+2024-03-29T15:47:33.154682+08:00 INFO rocket::server - [1;39mOutcome: [0m[32mSuccess[0m([39m200 OK[0m)
+2024-03-29T15:47:33.154836+08:00 INFO rocket::server - [32mResponse succeeded.[0m
+2024-03-29T15:49:54.432197+08:00 WARN rocket::server - Received SIGINT. Requesting shutdown.
+2024-03-29T15:49:54.432348+08:00 INFO rocket::server - Shutdown requested. Waiting for pending I/O...
+2024-03-29T15:49:54.432549+08:00 INFO rocket::server - Graceful shutdown completed successfully.
+2024-03-29T15:49:59.368382+08:00 INFO lottery - long inited!
+2024-03-29T15:49:59.400723+08:00 INFO rocket::config::config - 🔧 Configured for [4mdebug[0m.
+2024-03-29T15:49:59.400792+08:00 INFO rocket::config::config - address: [1;39m127.0.0.1[0m
+2024-03-29T15:49:59.400824+08:00 INFO rocket::config::config - port: [1;39m8000[0m
+2024-03-29T15:49:59.400852+08:00 INFO rocket::config::config - workers: [1;39m12[0m
+2024-03-29T15:49:59.400878+08:00 INFO rocket::config::config - max blocking threads: [1;39m512[0m
+2024-03-29T15:49:59.400940+08:00 INFO rocket::config::config - ident: [1;39mRocket[0m
+2024-03-29T15:49:59.400967+08:00 INFO rocket::config::config - IP header: [1;39mX-Real-IP[0m
+2024-03-29T15:49:59.401004+08:00 INFO rocket::config::config - limits: [1;39mbytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB[0m
+2024-03-29T15:49:59.401036+08:00 INFO rocket::config::config - temp dir: [1;39m/var/folders/5c/lr97g91j4319_f1vsg410ylw0000gn/T/[0m
+2024-03-29T15:49:59.401061+08:00 INFO rocket::config::config - http/2: [1;39mtrue[0m
+2024-03-29T15:49:59.401085+08:00 INFO rocket::config::config - keep-alive: [1;39m5[0m[1;39ms[0m
+2024-03-29T15:49:59.401109+08:00 INFO rocket::config::config - tls: [1;39mdisabled[0m
+2024-03-29T15:49:59.401134+08:00 INFO rocket::config::config - shutdown: [1;39mctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s[0m
+2024-03-29T15:49:59.401161+08:00 INFO rocket::config::config - log level: [1;39mnormal[0m
+2024-03-29T15:49:59.401185+08:00 INFO rocket::config::config - cli colors: [1;39mtrue[0m
+2024-03-29T15:49:59.401338+08:00 INFO rocket::rocket - 📬 [35mRoutes[0m:
+2024-03-29T15:49:59.401426+08:00 INFO rocket::rocket - [36m([0m[39mindex[0m[36m)[0m [32mGET[0m [34m/hi[0m
+2024-03-29T15:49:59.401461+08:00 INFO rocket::rocket - [36m([0m[39mtest[0m[36m)[0m [32mGET[0m [34m/test[0m
+2024-03-29T15:49:59.401498+08:00 INFO rocket::rocket - [36m([0m[39mput_item_to_redis[0m[36m)[0m [32mPOST[0m [34m/items[0m [33mapplication/json[0m
+2024-03-29T15:49:59.401533+08:00 INFO rocket::rocket - [36m([0m[39mtoken[0m[36m)[0m [32mGET[0m [34m/getToken?<deviceId>[0m
+2024-03-29T15:49:59.401564+08:00 INFO rocket::rocket - [36m([0m[39mget_problem_list[0m[36m)[0m [32mGET[0m [34m/getProblemList?<token>[0m
+2024-03-29T15:49:59.401594+08:00 INFO rocket::rocket - [36m([0m[39mdelay[0m[36m)[0m [32mGET[0m [34m/delay/<seconds>[0m
+2024-03-29T15:49:59.401636+08:00 INFO rocket::fairing::fairings - 📡 [35mFairings[0m:
+2024-03-29T15:49:59.401669+08:00 INFO rocket::fairing::fairings - [1;39mShield[0m ([1;34mliftoff, response, singleton[0m)
+2024-03-29T15:49:59.401696+08:00 INFO rocket::fairing::fairings - [1;39m'lottery' Database Pool[0m ([1;34mignite[0m)
+2024-03-29T15:49:59.405758+08:00 INFO rocket::shield::shield - 🛡️ [35mShield[0m:
+2024-03-29T15:49:59.405840+08:00 INFO rocket::shield::shield - X-Content-Type-Options: [39mnosniff[0m
+2024-03-29T15:49:59.405866+08:00 INFO rocket::shield::shield - X-Frame-Options: [39mSAMEORIGIN[0m
+2024-03-29T15:49:59.405889+08:00 INFO rocket::shield::shield - Permissions-Policy: [39minterest-cohort=()[0m
+2024-03-29T15:49:59.405945+08:00 WARN rocket::rocket - 🚀 [1;39mRocket has launched from [4mhttp://127.0.0.1:8000[0m
+2024-03-29T15:50:03.688729+08:00 INFO rocket::server - [32mGET[0m [34m/getProblemList?token=1111[0m [33mtext/html[0m:
+2024-03-29T15:50:03.688864+08:00 INFO rocket::server - Matched: [36m([0m[39mget_problem_list[0m[36m)[0m [32mGET[0m [34m/getProblemList?<token>[0m
+2024-03-29T15:50:03.691724+08:00 INFO rocket::server - [1;39mOutcome: [0m[32mSuccess[0m([39m200 OK[0m)
+2024-03-29T15:50:03.691942+08:00 INFO rocket::server - [32mResponse succeeded.[0m
+2024-03-29T15:50:04.895285+08:00 INFO rocket::server - [32mGET[0m [34m/getProblemList?token=1111[0m [33mtext/html[0m:
+2024-03-29T15:50:04.895378+08:00 INFO rocket::server - Matched: [36m([0m[39mget_problem_list[0m[36m)[0m [32mGET[0m [34m/getProblemList?<token>[0m
+2024-03-29T15:50:04.896515+08:00 INFO rocket::server - [1;39mOutcome: [0m[32mSuccess[0m([39m200 OK[0m)
+2024-03-29T15:50:04.896691+08:00 INFO rocket::server - [32mResponse succeeded.[0m
+2024-03-29T15:51:16.911890+08:00 INFO rocket::server - [32mGET[0m [34m/getProblemList?token=1111[0m [33mtext/html[0m:
+2024-03-29T15:51:16.911996+08:00 INFO rocket::server - Matched: [36m([0m[39mget_problem_list[0m[36m)[0m [32mGET[0m [34m/getProblemList?<token>[0m
+2024-03-29T15:51:16.913169+08:00 INFO rocket::server - [1;39mOutcome: [0m[32mSuccess[0m([39m200 OK[0m)
+2024-03-29T15:51:16.913348+08:00 INFO rocket::server - [32mResponse succeeded.[0m
+2024-03-29T15:51:18.627453+08:00 INFO rocket::server - [32mGET[0m [34m/getProblemList?token=1111[0m [33mtext/html[0m:
+2024-03-29T15:51:18.627548+08:00 INFO rocket::server - Matched: [36m([0m[39mget_problem_list[0m[36m)[0m [32mGET[0m [34m/getProblemList?<token>[0m
+2024-03-29T15:51:18.629620+08:00 INFO rocket::server - [1;39mOutcome: [0m[32mSuccess[0m([39m200 OK[0m)
+2024-03-29T15:51:18.629889+08:00 INFO rocket::server - [32mResponse succeeded.[0m
+2024-03-29T15:51:19.101030+08:00 INFO rocket::server - [32mGET[0m [34m/getProblemList?token=1111[0m [33mtext/html[0m:
+2024-03-29T15:51:19.101173+08:00 INFO rocket::server - Matched: [36m([0m[39mget_problem_list[0m[36m)[0m [32mGET[0m [34m/getProblemList?<token>[0m
+2024-03-29T15:51:19.102056+08:00 INFO rocket::server - [1;39mOutcome: [0m[32mSuccess[0m([39m200 OK[0m)
+2024-03-29T15:51:19.102200+08:00 INFO rocket::server - [32mResponse succeeded.[0m
+2024-03-29T15:51:19.494048+08:00 INFO rocket::server - [32mGET[0m [34m/getProblemList?token=1111[0m [33mtext/html[0m:
+2024-03-29T15:51:19.494189+08:00 INFO rocket::server - Matched: [36m([0m[39mget_problem_list[0m[36m)[0m [32mGET[0m [34m/getProblemList?<token>[0m
+2024-03-29T15:51:19.495024+08:00 INFO rocket::server - [1;39mOutcome: [0m[32mSuccess[0m([39m200 OK[0m)
+2024-03-29T15:51:19.495163+08:00 INFO rocket::server - [32mResponse succeeded.[0m
+2024-03-29T15:51:39.122052+08:00 WARN rocket::server - Received SIGINT. Requesting shutdown.
+2024-03-29T15:51:39.141915+08:00 INFO rocket::server - Shutdown requested. Waiting for pending I/O...
+2024-03-29T15:51:41.143157+08:00 INFO rocket::server - Graceful shutdown completed successfully.
